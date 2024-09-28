@@ -1,0 +1,215 @@
+
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url('/images/istockphoto.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+h1 {
+    margin-top: 15px;
+    font-size: 1.8em;
+    color: #2c3e50;
+    font-family: 'Playfair Display', serif; /* Applied Playfair Display to headings */
+}
+
+form .form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #34495e;
+    font-family: 'Roboto', sans-serif; /* Ensures labels use Roboto */
+}
+
+.required {
+    color: #e74c3c;
+}
+
+.input-icon {
+    position: relative;
+}
+
+.input-icon i {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #7f8c8d;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px 10px 40px;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif; /* Ensures inputs use Roboto */
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #27ae60;
+    outline: none;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.options label {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #2c3e50;
+    font-family: 'Roboto', sans-serif; /* Ensures options use Roboto */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #27ae60;
+    border: none;
+    color: #fff;
+    font-size: 1.1em;
+    font-family: 'Roboto', sans-serif; /* Ensures button text uses Roboto */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+button:hover {
+    background-color: #219150;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: none;
+    font-family: 'Roboto', sans-serif; /* Ensures error messages use Roboto */
+}
+
+.hidden {
+    display: none;
+}
+
+#survey-results {
+    text-align: center;
+}
+
+#survey-results h2 {
+    color: #27ae60;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif; /* Applied Playfair Display to result headings */
+}
+
+#survey-results h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif; /* Ensures subheadings use Roboto */
+}
+
+#responses-list {
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif; /* Ensures list items use Roboto */
+}
+
+#responses-list li {
+    background: #ecf0f1;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-left: 5px solid #27ae60;
+    border-radius: 4px;
+}
+
+#reset-button {
+    background-color: #e67e22;
+    font-family: 'Roboto', sans-serif; /* Ensures reset button text uses Roboto */
+}
+
+#reset-button:hover {
+    background-color: #d35400;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    button {
+        font-size: 1em;
+    }
+}
+
+/* Conditional Group Styling */
+.conditional-group {
+    display: none;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer's Survey</title>
+    <link rel="stylesheet" href="survey.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrQdF2NfFbJprf/+m5Xh9Cl91GYgocP4b6sLtUMJ1ev0SVj6YUL8d2h8C+vQKnuq5Eik8WmEdf1Vsf1KZQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="/images/farm banner.jpeg" alt="Farm Survey Banner" class="banner-image">
+            <h1>Farmer's Feedback Survey</h1>
+        </header>
+        <form id="survey-form">
+            <!-- Full Name Field -->
+            <div class="form-group">
+                <label for="full-name">Full Name <span class="required">*</span></label>
+                <div class="input-icon">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="full-name" name="fullName" placeholder="Enter your full name" required>
+                </div>
+                <small class="error-message" id="full-name-error"></small>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <div class="input-icon">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <small class="error-message" id="email-error"></small>
+            </div>
+
+            <!-- Farm Location -->
+            <div class="form-group">
+                <label for="location">Farm Location <span class="required">*</span></label>
+                <div class="input-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" id="location" name="location" placeholder="e.g., Punjab, India" required>
+                </div>
+                <small class="error-message" id="location-error"></small>
+            </div>
+
+            <!-- Type of Farming -->
+            <div class="form-group">
+                <label>Type of Farming <span class="required">*</span></label>
+                <div class="options">
+                    <label><input type="radio" name="farmingType" value="Crop Farming" required> Crop Farming</label>
+                    <label><input type="radio" name="farmingType" value="Dairy Farming"> Dairy Farming</label>
+                    <label><input type="radio" name="farmingType" value="Poultry Farming"> Poultry Farming</label>
+                    <label><input type="radio" name="farmingType" value="Mixed Farming"> Mixed Farming</label>
+                </div>
+                <small class="error-message" id="farmingType-error"></small>
+            </div>
+
+            <!-- Crop Types (If Crop Farming) -->
+            <div class="form-group conditional-group" id="crop-types-group">
+                <label>What crops do you primarily cultivate? (Select all that apply)</label>
+                <div class="options">
+                    <label><input type="checkbox" name="crops" value="Wheat"> Wheat</label>
+                    <label><input type="checkbox" name="crops" value="Rice"> Rice</label>
+                    <label><input type="checkbox" name="crops" value="Maize"> Maize</label>
+                    <label><input type="checkbox" name="crops" value="Soybean"> Soybean</label>
+                    <label><input type="checkbox" name="crops" value="Other"> Other</label>
+                </div>
+            </div>
+
+            <!-- Farm Size -->
+            <div class="form-group">
+                <label for="farm-size">Farm Size <span class="required">*</span></label>
+                <select id="farm-size" name="farmSize" required>
+                    <option value="">--Select Farm Size--</option>
+                    <option value="Less than 5 acres">Less than 5 acres</option>
+                    <option value="5-10 acres">5-10 acres</option>
+                    <option value="11-20 acres">11-20 acres</option>
+                    <option value="More than 20 acres">More than 20 acres</option>
+                </select>
+                <small class="error-message" id="farm-size-error"></small>
+            </div>
+
+            <!-- Challenges Faced -->
+            <div class="form-group">
+                <label>What are the biggest challenges you face? (Select all that apply)</label>
+                <div class="options">
+                    <label><input type="checkbox" name="challenges" value="Pests and Diseases"> Pests and Diseases</label>
+                    <label><input type="checkbox" name="challenges" value="Weather Variability"> Weather Variability</label>
+                    <label><input type="checkbox" name="challenges" value="Market Access"> Market Access</label>
+                    <label><input type="checkbox" name="challenges" value="Financial Constraints"> Financial Constraints</label>
+                    <label><input type="checkbox" name="challenges" value="Labor Shortage"> Labor Shortage</label>
+                    <label><input type="checkbox" name="challenges" value="Other"> Other</label>
+                </div>
+            </div>
+
+            <!-- Technology Usage -->
+            <div class="form-group">
+                <label for="technology">Do you use any agricultural technologies or machinery?</label>
+                <select id="technology" name="technology">
+                    <option value="">--Select an Option--</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <!-- Additional Comments -->
+            <div class="form-group">
+                <label for="comments">Additional Comments:</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Your comments..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit"><i class="fas fa-paper-plane"></i> Submit Survey</button>
+        </form>
+
+        <!-- Survey Results -->
+        <div id="survey-results" class="hidden">
+            <h2>Thank You for Your Participation!</h2>
+            <h3>Your Responses:</h3>
+            <ul id="responses-list"></ul>
+            <button id="reset-button"><i class="fas fa-redo"></i> Take Another Survey</button>
+        </div>
+    </div>
+
+    <script src="survey.js"></script>
+</body>
+</html>
